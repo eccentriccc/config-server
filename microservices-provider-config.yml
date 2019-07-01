@@ -1,0 +1,100 @@
+spring:
+    profiles:
+        active:
+        - dev
+---
+server:
+  port: 8001
+
+mybatis:
+  type-aliases-package: com.gu.springcloud.entity    # \u6240\u6709Entity\u522B\u540D\u7C7B\u6240\u5728\u5305
+  mapper-locations: com/gu/springcloud/microservicesconfigproviderdept/mapper/**/*.xml                 # mapper\u6620\u5C04\u6587\u4EF6
+
+
+spring:
+  profiles: dev
+  application:
+    name: microservicecloud-dept-dev
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # \u5F53\u524D\u6570\u636E\u6E90\u64CD\u4F5C\u7C7B\u578B
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver              # mysql\u9A71\u52A8\u5305
+    url: jdbc:p6spy:mysql://localhost:3306/cloudDB01?serverTimezone=UTC             # \u6570\u636E\u5E93\u540D\u79F0
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5                                           # \u6570\u636E\u5E93\u8FDE\u63A5\u6C60\u7684\u6700\u5C0F\u7EF4\u6301\u8FDE\u63A5\u6570
+      initial-size: 5                                       # \u521D\u59CB\u5316\u8FDE\u63A5\u6570
+      max-total: 5                                          # \u6700\u5927\u8FDE\u63A5\u6570
+      max-wait-millis: 200                                  # \u7B49\u5F85\u8FDE\u63A5\u83B7\u53D6\u7684\u6700\u5927\u8D85\u65F6\u65F6\u95F4
+      filters: stat
+      initialSize: 2
+      maxActive: 300
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1
+      testWhileIdle: false
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: false
+      maxPoolPreparedStatementPerConnectionSize: 200
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: microservices-provider-dept-8001
+    prefer-ip-address: true
+info:
+  app.name: gu-microservicecloud
+  company.name: www.gu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+---
+server:
+  port: 8001
+
+mybatis:
+  type-aliases-package: com.gu.springcloud.entity    # \u6240\u6709Entity\u522B\u540D\u7C7B\u6240\u5728\u5305
+  mapper-locations: com/gu/springcloud/microservicesconfigproviderdept/mapper/**/*.xml                 # mapper\u6620\u5C04\u6587\u4EF6
+
+
+spring:
+  profiles: dev
+  application:
+    name: microservicecloud-dept-test
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # \u5F53\u524D\u6570\u636E\u6E90\u64CD\u4F5C\u7C7B\u578B
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver              # mysql\u9A71\u52A8\u5305
+    url: jdbc:p6spy:mysql://localhost:3306/cloudDB03?serverTimezone=UTC             # \u6570\u636E\u5E93\u540D\u79F0
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5                                           # \u6570\u636E\u5E93\u8FDE\u63A5\u6C60\u7684\u6700\u5C0F\u7EF4\u6301\u8FDE\u63A5\u6570
+      initial-size: 5                                       # \u521D\u59CB\u5316\u8FDE\u63A5\u6570
+      max-total: 5                                          # \u6700\u5927\u8FDE\u63A5\u6570
+      max-wait-millis: 200                                  # \u7B49\u5F85\u8FDE\u63A5\u83B7\u53D6\u7684\u6700\u5927\u8D85\u65F6\u65F6\u95F4
+      filters: stat
+      initialSize: 2
+      maxActive: 300
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1
+      testWhileIdle: false
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: false
+      maxPoolPreparedStatementPerConnectionSize: 200
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: microservices-provider-dept-8001
+    prefer-ip-address: true
+info:
+  app.name: gu-microservicecloud
+  company.name: www.gu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
