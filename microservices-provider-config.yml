@@ -59,7 +59,7 @@ mybatis:
 
 
 spring:
-  profiles: dev
+  profiles: test
   application:
     name: microservicecloud-dept-test
   datasource:
