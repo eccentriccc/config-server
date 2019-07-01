@@ -21,23 +21,22 @@ spring:
     url: jdbc:p6spy:mysql://localhost:3306/cloudDB01?serverTimezone=UTC             # \u6570\u636E\u5E93\u540D\u79F0
     username: root
     password: root
-    dbcp2:
-      min-idle: 5                                           # \u6570\u636E\u5E93\u8FDE\u63A5\u6C60\u7684\u6700\u5C0F\u7EF4\u6301\u8FDE\u63A5\u6570
-      initial-size: 5                                       # \u521D\u59CB\u5316\u8FDE\u63A5\u6570
-      max-total: 5                                          # \u6700\u5927\u8FDE\u63A5\u6570
-      max-wait-millis: 200                                  # \u7B49\u5F85\u8FDE\u63A5\u83B7\u53D6\u7684\u6700\u5927\u8D85\u65F6\u65F6\u95F4
-      filters: stat
-      initialSize: 2
-      maxActive: 300
-      maxWait: 60000
-      timeBetweenEvictionRunsMillis: 60000
-      minEvictableIdleTimeMillis: 300000
-      validationQuery: SELECT 1
-      testWhileIdle: false
-      testOnBorrow: false
-      testOnReturn: false
-      poolPreparedStatements: false
-      maxPoolPreparedStatementPerConnectionSize: 200
+    min-idle: 5                                           # \u6570\u636E\u5E93\u8FDE\u63A5\u6C60\u7684\u6700\u5C0F\u7EF4\u6301\u8FDE\u63A5\u6570
+    initial-size: 5                                       # \u521D\u59CB\u5316\u8FDE\u63A5\u6570
+    max-total: 5                                          # \u6700\u5927\u8FDE\u63A5\u6570
+    max-wait-millis: 200                                  # \u7B49\u5F85\u8FDE\u63A5\u83B7\u53D6\u7684\u6700\u5927\u8D85\u65F6\u65F6\u95F4
+    filters: stat
+    initialSize: 2
+    maxActive: 300
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1
+    testWhileIdle: false
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: false
+    maxPoolPreparedStatementPerConnectionSize: 200
 eureka:
   client:
     service-url:
@@ -69,23 +68,22 @@ spring:
     url: jdbc:p6spy:mysql://localhost:3306/cloudDB03?serverTimezone=UTC             # \u6570\u636E\u5E93\u540D\u79F0
     username: root
     password: root
-    dbcp2:
-      min-idle: 5                                           # \u6570\u636E\u5E93\u8FDE\u63A5\u6C60\u7684\u6700\u5C0F\u7EF4\u6301\u8FDE\u63A5\u6570
-      initial-size: 5                                       # \u521D\u59CB\u5316\u8FDE\u63A5\u6570
-      max-total: 5                                          # \u6700\u5927\u8FDE\u63A5\u6570
-      max-wait-millis: 200                                  # \u7B49\u5F85\u8FDE\u63A5\u83B7\u53D6\u7684\u6700\u5927\u8D85\u65F6\u65F6\u95F4
-      filters: stat
-      initialSize: 2
-      maxActive: 300
-      maxWait: 60000
-      timeBetweenEvictionRunsMillis: 60000
-      minEvictableIdleTimeMillis: 300000
-      validationQuery: SELECT 1
-      testWhileIdle: false
-      testOnBorrow: false
-      testOnReturn: false
-      poolPreparedStatements: false
-      maxPoolPreparedStatementPerConnectionSize: 200
+    min-idle: 5                                           # \u6570\u636E\u5E93\u8FDE\u63A5\u6C60\u7684\u6700\u5C0F\u7EF4\u6301\u8FDE\u63A5\u6570
+    initial-size: 5                                       # \u521D\u59CB\u5316\u8FDE\u63A5\u6570
+    max-total: 5                                          # \u6700\u5927\u8FDE\u63A5\u6570
+    max-wait-millis: 200                                  # \u7B49\u5F85\u8FDE\u63A5\u83B7\u53D6\u7684\u6700\u5927\u8D85\u65F6\u65F6\u95F4
+    filters: stat
+    initialSize: 2
+    maxActive: 300
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1
+    testWhileIdle: false
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: false
+    maxPoolPreparedStatementPerConnectionSize: 200
 eureka:
   client:
     service-url:
